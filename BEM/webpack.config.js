@@ -20,7 +20,7 @@ const config = {
         './src/style.scss'
     ],
     output: {
-        path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'js/common.js',
     },
     devServer: {
