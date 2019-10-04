@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const htmlTemplateLocation = path.join(__dirname, 'src', 'pages');
 const htmlPages = fs.readdirSync(htmlTemplateLocation)
@@ -16,21 +17,24 @@ const htmlPages = fs.readdirSync(htmlTemplateLocation)
 
 const config = {
     entry: [
-        './src/common.js',
-        './src/style.scss'
+        './src/index.js'
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/common.js',
+        filename: 'js/index.js',
     },
     devServer: {
         port: 3000,
     },
-    plugins: htmlPages.map(page =>
-        new HtmlWebpackPlugin({
-            template: page.template,
-            filename: page.compiled
-        })
+    plugins: [
+        new MiniCssExtractPlugin({ filename: 'css/style.css', })
+    ].concat(
+        htmlPages.map(page =>
+            new HtmlWebpackPlugin({
+                template: page.template,
+                filename: page.compiled
+            })
+        )
     ),
     module: {
         rules: [
@@ -39,21 +43,10 @@ const config = {
             {
                 test: /\.scss$/,
                 use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'css/[name].css',
-                        }
-                    },
-                    {
-                        loader: 'extract-loader'
-                    },
-                    {
-                        loader: 'css-loader?-url'
-                    },
-                    {
-                        loader: 'sass-loader'
-                    }
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
                 ]
             }
         ]
