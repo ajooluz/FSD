@@ -3,45 +3,34 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const htmlTemplateLocation = path.join(__dirname, 'src', 'pages');
-const htmlPages = fs.readdirSync(htmlTemplateLocation)
-                    .filter(filename => path.extname(filename).toLocaleLowerCase() === '.pug')
-                    .map(filename => {
-                        const basename = path.parse(filename).name;
-                        return {
-                            basename: basename,
-                            template: path.join(htmlTemplateLocation, `${basename}.pug`),
-                            compiled: `${basename}.html`
-                        };
-                    });
-
 const config = {
     entry: [
         './src/index.js'
     ],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'js/index.js',
     },
     devServer: {
         port: 3000,
     },
     plugins: [
-        new MiniCssExtractPlugin({ filename: 'css/style.css', })
+        new MiniCssExtractPlugin({ filename: 'css/style.css', }),
     ].concat(
-        htmlPages.map(page =>
-            new HtmlWebpackPlugin({
-                template: page.template,
-                filename: page.compiled
+        ['index', 'page'].map(
+            name => new HtmlWebpackPlugin({
+                template: `src/pages/${name}.pug`,
+                filename: `${name}.html`,
+                chunks: [name]
             })
         )
     ),
     module: {
         rules: [
             {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-            {test: /\.pug$/, use: ['pug-loader']},
+            {test: /\.pug$/, loader: 'pug-loader', options: { pretty: true }},
             {
-                test: /\.scss$/,
+                test: /\.sass$/,
                 use: [
                     'style-loader',
                     MiniCssExtractPlugin.loader,
@@ -54,9 +43,7 @@ const config = {
 };
 
 module.exports = (env, argv) => {
-    if (argv.mode === 'development') {
-    }
-    if (argv.mode === 'production') {
-    }
+    if (argv.mode === 'development') {}
+    if (argv.mode === 'production') {}
     return config;
 };
