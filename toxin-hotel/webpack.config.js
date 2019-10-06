@@ -4,9 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-    entry: [
-        './src/index.js'
-    ],
+    context: __dirname,
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'js/index.js',
@@ -27,7 +26,7 @@ const config = {
     ),
     module: {
         rules: [
-            {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
             {test: /\.pug$/, loader: 'pug-loader', options: { pretty: true }},
             {
                 test: /\.sass$/,

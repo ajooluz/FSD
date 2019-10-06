@@ -1,1 +1,3 @@
-console.log('header.js');
+import './header.sass';
+
+console.log('header.js inited');

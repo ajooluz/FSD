@@ -8,17 +8,10 @@ html(lang="en")
         block head-title
             title Page Layout
 
-        style
-            // - for use scss filter you need to install jstransformer-scss package
-            include:scss ./page.sass
-
-        block head-common-style
-            link(rel='stylesheet', href='./css/style.css')
-
-        block head-custom-style
+        link(rel='stylesheet', href='css/style.css')
 
     body
         block body-main
             h1 Page Layout
 
-        block body-custom-script
+    script(src='js/index.js')
