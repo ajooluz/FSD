@@ -4,9 +4,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const pagesLocation = path.join(__dirname, 'src', 'pages');
-const pages = fs.readdirSync(pagesLocation)
+const walk = location => {
+    let results = [];
+    const list = fs.readdirSync(location);
+    list.forEach(function(file) {
+        file = path.join(location, file);
+        const stat = fs.statSync(file);
+        if (stat && stat.isDirectory()) {
+            results = results.concat(walk(file));
+        } else {
+            results.push(file);
+        }
+    });
+    return results;
+};
+const pages = walk(pagesLocation)
     .filter(filename => path.extname(filename).toLocaleLowerCase() === '.pug')
-    .map(filename => path.parse(filename).name);
+    .map(filename => {
+        const name = path.parse(filename).name;
+        return {
+            template: filename,
+            filename: `${name}.html`
+        }
+    });
 
 const config = {
     context: __dirname,
@@ -21,11 +41,7 @@ const config = {
     plugins: [
         new MiniCssExtractPlugin({ filename: 'css/style.css', }),
     ].concat(
-        pages.map(name => new HtmlWebpackPlugin({
-            template: `src/pages/${name}.pug`,
-            filename: `${name}.html`,
-            chunks: [name]
-        }))
+        pages.map(page => new HtmlWebpackPlugin(page))
     ),
     module: {
         rules: [
