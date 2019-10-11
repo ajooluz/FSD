@@ -1,0 +1,9 @@
+.palette {
+  display: flex;
+
+  &__color {
+    border: solid 1px red;
+    width: 70px;
+    height: 70px;
+  }
+}

@@ -7,21 +7,11 @@ body {
 
 main.ui-kit {
   max-width: 1440px;
-  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
 
   &_white {
     background-color: white;
-  }
-
-  header {
-    padding: 30px;
-    min-height: 150px;
-
-    > a {
-      display: inline-flex;
-    }
   }
 }
 

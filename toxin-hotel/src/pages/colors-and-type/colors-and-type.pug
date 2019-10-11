@@ -1,11 +1,67 @@
 extends ../../layouts/ui-kit_white
 
+include ../../blocks/ui-kit/palette/palette
+
 block head-title
     title Colors & Type
 
 block append main-grid
     div(bp="grid")
         section(bp="6@lg")
-            = 1
+            -
+                const list = [
+                    {
+                        background: 'rgba(31, 32, 65, 1)',
+                        title: {
+                            primary: 'Dark Shade 100%',
+                            secondary: '#1F2041'
+                        }
+                    },
+                    {
+                        background: 'rgba(31, 32, 65, 0.75)',
+                        title: {
+                            primary: 'Dark Shade 75%',
+                            secondary: '#1F2041'
+                        }
+                    },
+                    {
+                        background: 'rgba(31, 32, 65, 0.5)',
+                        title: {
+                            primary: 'Dark Shade 50%',
+                            secondary: '#1F2041'
+                        }
+                    },
+                    {
+                        background: 'rgba(31, 32, 65, 0.25)',
+                        title: {
+                            primary: 'Dark Shade 25%',
+                            secondary: '#1F2041'
+                        }
+                    },
+                    {
+                        background: 'rgba(31, 32, 65, 0.05)',
+                        title: {
+                            primary: 'Dark Shade 5%',
+                            secondary: '#1F2041'
+                        }
+                    },
+                    {
+                        background: '#BC9CFF',
+                        title: {
+                            primary: 'Purple',
+                            secondary: '#BC9CFF'
+                        }
+                    },
+                    {
+                        background: '#6FCF97',
+                        title: {
+                            primary: 'Green',
+                            secondary: '#6FCF97'
+                        }
+                    }
+                ];
+            each item in list
+                +palette(item)
+
         section(bp="6@lg")
-            = 2
+            | 2
