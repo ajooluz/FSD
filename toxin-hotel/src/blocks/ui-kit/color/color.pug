@@ -1,0 +1,6 @@
+mixin color(params)
+    .color
+        div(class=`color__palette color__palette${params.modifier}`)
+        .color__title
+            .color__title-primary #{params.title.primary}
+            .color__title-secondary #{params.title.secondary}

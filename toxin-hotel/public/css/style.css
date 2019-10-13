@@ -1,6 +1,8 @@
-.palette{display:flex}.palette__color{border:solid 1px red;width:70px;height:70px}
+.palette{display:flex}.palette__color{width:70px;height:70px;border-radius:6px}.palette__color_dark-shade-100{background:#1f2041}.palette__color_dark-shade-75{background:rgba(31,32,65,0.75)}.palette__color_dark-shade-50{background:rgba(31,32,65,0.5)}.palette__color_dark-shade-25{background:rgba(31,32,65,0.25)}.palette__color_dark-shade-5{background:rgba(31,32,65,0.5)}.palette__color_purple{background:#BC9CFF}.palette__color_green{background:#6FCF97}.palette__title{padding-left:40px;font-family:Quicksand;font-style:normal}
 
 .ui-kit-header{padding:30px;min-height:145px}.ui-kit-header>a{display:inline-flex}
+
+@font-face{font-family:'Quicksand';src:local("Quicksand Light"),local("Quicksand-Light"),url(../quicksandlight.woff2) format("woff2"),url(../quicksandlight.woff) format("woff"),url(../quicksandlight.ttf) format("truetype");font-weight:300;font-style:normal}@font-face{font-family:'Quicksand';src:local("Quicksand Light Italic"),local("Quicksand-LightItalic"),url(../quicksandlightitalic.woff2) format("woff2"),url(../quicksandlightitalic.woff) format("woff"),url(../quicksandlightitalic.ttf) format("truetype");font-weight:300;font-style:italic}@font-face{font-family:'Quicksand';src:local("Quicksand Regular"),local("Quicksand-Regular"),url(../quicksandregular.woff2) format("woff2"),url(../quicksandregular.woff) format("woff"),url(../quicksandregular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:'Quicksand';src:local("Quicksand Italic"),local("Quicksand-Italic"),url(../quicksanditalic.woff2) format("woff2"),url(../quicksanditalic.woff) format("woff"),url(../quicksanditalic.ttf) format("truetype");font-weight:400;font-style:italic}@font-face{font-family:'Quicksand';src:local("Quicksand Bold"),local("Quicksand-Bold"),url(../quicksandbold.woff2) format("woff2"),url(../quicksandbold.woff) format("woff"),url(../quicksandbold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-family:'Quicksand';src:local("Quicksand Bold Italic"),local("Quicksand-BoldItalic"),url(../quicksandbolditalic.woff2) format("woff2"),url(../quicksandbolditalic.woff) format("woff"),url(../quicksandbolditalic.ttf) format("truetype");font-weight:700;font-style:italic}
 
 /* Box sizing rules */
 *,
@@ -928,4 +930,5 @@ html {
 
 body{background-color:#E5E5E5}main.ui-kit{max-width:1440px;margin-left:auto;margin-right:auto}main.ui-kit_white{background-color:white}
 
+.colors-and-type__section-wrapper{display:flex;justify-content:center}.colors-and-type__palette-layout{margin:20px}
 
