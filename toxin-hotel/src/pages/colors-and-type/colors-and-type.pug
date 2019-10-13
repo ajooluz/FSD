@@ -1,6 +1,7 @@
 extends ../../layouts/ui-kit_white
 
 include ../../blocks/ui-kit/color/color
+include ../../blocks/ui-kit/type/type
 
 block head-title
     title Colors & Type
@@ -68,18 +69,23 @@ block append main-grid
             -
                 const typeItems = [
                     {
-                        modifier: 'h1'
+                        modifier: '_h1',
+                        title: 'This one is the sub-section or widget title'
                     },
                     {
-                        modifier: 'h2'
+                        modifier: '_h2',
+                        title: 'Next one is the item title inside widgets'
                     },
                     {
-                        modifier: 'h3'
+                        modifier: '_h3',
+                        title: 'This is a label or CTA text'
                     },
                     {
-                        modifier: 'body'
+                        modifier: '_body',
+                        title: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'
                     }
                 ];
             each item in typeItems
                 div.colors-and-type__type-layout
+                    +type(item)
 
