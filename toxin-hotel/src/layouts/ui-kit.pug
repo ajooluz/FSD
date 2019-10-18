@@ -11,9 +11,11 @@ html(lang="en")
         link(rel='stylesheet', href='css/style.css')
 
     body
-        block body-main
-            main.ui-kit
-                block main-grid
-                    include ../blocks/ui-kit/ui-kit-header/ui-kit-header
+        main.ui-kit.ui-kit_white
+            include ../blocks/ui-kit/ui-kit-header/ui-kit-header
+
+            block body-main
+
+            include ../blocks/ui-kit/ui-kit-footer/ui-kit-footer
 
     script(src='js/index.js')
