@@ -4,3 +4,4 @@
 */
 const importAll = r => { r.keys().forEach(r); };
 importAll(require.context('.', true, /\.scss$/));
+importAll(require.context('./pages', true, /\.js$/));

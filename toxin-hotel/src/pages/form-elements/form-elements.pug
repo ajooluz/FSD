@@ -1,0 +1,19 @@
+extends ../../layouts/ui-kit_white
+
+include ../../blocks/form-elements/text-field/text-field
+
+block head-title
+    title Form Elements
+
+block body-main-content
+    .form-elements__wrapper
+        section.form-elements__section
+            +text-field({
+                label: { primary: 'Text Field', secondary: 'Default' },
+                placeholder: 'Email',
+                value: 'Email'
+            })
+        section.form-elements__section
+            | section 2
+        section.form-elements__section
+            | section 3

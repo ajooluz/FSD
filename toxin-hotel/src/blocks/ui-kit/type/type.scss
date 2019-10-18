@@ -1,74 +1,74 @@
 .type {
-  display: flex;
-  font-family: 'Montserrat', sans-serif;
-  color: #1F2041;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    color: #1F2041;
 
-  &__label {
-    color: rgba(31, 32, 65, 0.25);
-    min-width: 35px;
-    text-align: right;
-  }
-
-  &__title {
-    margin-left: 30px;
-  }
-
-  &_h1 {
-    font-size: 24px;
-
-    .type__label {
-      &:before {
-        content: 'H1';
-      }
+    &__label {
+        color: rgba(31, 32, 65, 0.25);
+        min-width: 35px;
+        text-align: right;
     }
 
-    .type__title {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: bold;
-    }
-  }
-
-  &_h2 {
-    font-size: 19px;
-
-    .type__label {
-      &:before {
-        content: 'H2';
-      }
+    &__title {
+        margin-left: 30px;
     }
 
-    .type__title {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: bold;
-    }
-  }
+    &_h1 {
+        font-size: 24px;
 
-  &_h3 {
-    font-size: 15px;
+        .type__label {
+            &:before {
+                content: 'H1';
+            }
+        }
 
-    .type__label {
-      &:before {
-        content: 'H3';
-      }
-    }
-
-    .type__title {
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
-
-  &_body {
-    font-size: 14px;
-
-    .type__label {
-      &:before {
-        content: 'Body';
-      }
+        .type__title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
     }
 
-    .type__title {
-      color: rgba(31, 32, 65, 0.75);
+    &_h2 {
+        font-size: 19px;
+
+        .type__label {
+            &:before {
+                content: 'H2';
+            }
+        }
+
+        .type__title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+        }
     }
-  }
+
+    &_h3 {
+        font-size: 15px;
+
+        .type__label {
+            &:before {
+                content: 'H3';
+            }
+        }
+
+        .type__title {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &_body {
+        font-size: 14px;
+
+        .type__label {
+            &:before {
+                content: 'Body';
+            }
+        }
+
+        .type__title {
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
 }

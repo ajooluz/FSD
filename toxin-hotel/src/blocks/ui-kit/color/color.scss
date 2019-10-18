@@ -1,53 +1,53 @@
 .color {
-  display: flex;
-
-  &__palette {
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
-
-    &_dark-shade-100 {
-      background: rgba(31, 32, 65, 1);
-    }
-
-    &_dark-shade-75 {
-      background: rgba(31, 32, 65, 0.75);
-    }
-
-    &_dark-shade-50 {
-      background: rgba(31, 32, 65, 0.5);
-    }
-
-    &_dark-shade-25 {
-      background: rgba(31, 32, 65, 0.25);
-    }
-
-    &_dark-shade-5 {
-      background: rgba(31, 32, 65, 0.05);
-    }
-
-    &_purple {
-      background: #BC9CFF;
-    }
-
-    &_green {
-      background: #6FCF97;
-    }
-  }
-
-  &__title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 
-    margin-left: 40px;
-    color: #1F2041;
-    font-family: 'Quicksand', sans-serif;
-    font-style: normal;
-    font-size: 19px;
+    &__palette {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
 
-    &-primary {
-      font-weight: bold;
+        &_dark-shade-100 {
+            background: rgba(31, 32, 65, 1);
+        }
+
+        &_dark-shade-75 {
+            background: rgba(31, 32, 65, 0.75);
+        }
+
+        &_dark-shade-50 {
+            background: rgba(31, 32, 65, 0.5);
+        }
+
+        &_dark-shade-25 {
+            background: rgba(31, 32, 65, 0.25);
+        }
+
+        &_dark-shade-5 {
+            background: rgba(31, 32, 65, 0.05);
+        }
+
+        &_purple {
+            background: #BC9CFF;
+        }
+
+        &_green {
+            background: #6FCF97;
+        }
     }
-  }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin-left: 40px;
+        color: #1F2041;
+        font-family: 'Quicksand', sans-serif;
+        font-style: normal;
+        font-size: 19px;
+
+        &-primary {
+            font-weight: bold;
+        }
+    }
 }

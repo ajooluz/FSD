@@ -1,0 +1,46 @@
+.text-field {
+    font-family: 'Montserrat', sans-serif;
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-bottom: 5px;
+
+        &-primary {
+            font-weight: bold;
+            color: #1F2041;
+        }
+
+        &-secondary {
+            color: rgba(31, 32, 65, 0.5);
+        }
+    }
+
+    &__input {
+        border: none;
+        width: 100%;
+        padding: 11px 15px;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.75);
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: rgba(31, 32, 65, 0.25);
+        }
+
+        &-border {
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            border-radius: 4px;
+
+            &_focus, &:hover {
+                border-color: rgba(31, 32, 65, 0.5);
+            }
+        }
+    }
+}

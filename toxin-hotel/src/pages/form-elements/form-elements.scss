@@ -1,0 +1,19 @@
+/* form-elements.scss */
+
+.form-elements {
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    &__section {
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+    }
+}

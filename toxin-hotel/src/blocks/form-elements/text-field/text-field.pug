@@ -1,0 +1,7 @@
+mixin text-field(params)
+    .text-field
+        .text-field__label
+            .text-field__label-primary #{params.label.primary}
+            .text-field__label-secondary #{params.label.secondary}
+        .text-field__input-border
+            input.text-field__input(type='text' value=params.value placeholder=params.placeholder)

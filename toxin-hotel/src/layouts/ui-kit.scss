@@ -2,16 +2,16 @@
 @import '~blueprint-css/dist/blueprint.css';
 
 body {
-  background-color: #E5E5E5;
+    background-color: #E5E5E5;
 }
 
 main.ui-kit {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 
-  &_white {
-    background-color: white;
-  }
+    &_white {
+        background-color: white;
+    }
 }
 

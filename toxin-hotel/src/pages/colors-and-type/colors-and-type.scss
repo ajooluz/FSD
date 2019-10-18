@@ -1,23 +1,25 @@
 /* colors-and-types.scss */
 
 .colors-and-type {
-  &__wrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 
-  &__section {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+    &__section {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 
-  &__color-layout {
-    margin-bottom: 20px;
-  }
+    &__color-layout:not(:last-child) {
+        margin-bottom: 20px;
+    }
 
-  &__type-layout {
-    margin-bottom: 50px;
-    max-width: 410px
-  }
+    &__type-layout {
+        margin-bottom: 50px;
+        max-width: 410px
+    }
 }
